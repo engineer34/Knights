@@ -28,10 +28,9 @@ function knightMoves(start, end) {
     const [x, y] = current.position;
 // Check if we reached the target square
     if (x === end[0] && y === end[1]) {
-      console.log(`You made it in ${current.path.length - 1} moves!`);
-      console.log("Path:");
-      current.path.forEach(p => console.log(p));
-      return;
+      let output = `You made it in ${current.path.length - 1} moves!\nPath:\n`;
+      current.path.forEach(p => output += `[${p}]\n`);
+      return output;
     }
 
     visited.add(`${x},${y}`);
@@ -46,4 +45,4 @@ for (const move of getMoves(current.position)){
     }
 }
 //we test 
-knightMoves ([0,0], [7,7]);
+//knightMoves ([0,0], [7,7]);
