@@ -37,7 +37,7 @@ function knightMoves(start, end) {
 
 for (const move of getMoves(current.position)){
     // Only visit squares we haven't already explored
-    if(!visited.has(`${move[0]}, ${move[1]}`)){
+    if(!visited.has(`${move[0]},${move[1]}`)){
         //sets new queue
         queue.push(new Knight(move, [...current.path, move]));
     }
@@ -46,3 +46,4 @@ for (const move of getMoves(current.position)){
 }
 //we test 
 //knightMoves ([0,0], [7,7]);
+export { knightMoves };
